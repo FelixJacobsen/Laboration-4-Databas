@@ -1,14 +1,23 @@
 package org.example;
 
 
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
         CustomerDao customerDao = new CustomerDaoImpl();
 
-        // customerDao.createCustomer(new Customer("Lum","Shabani",31,73673));
-       // customerDao.showAllCustomers().forEach(System.out::println);
-        customerDao.createCustomer(new Customer("Felix","Jacobsen",23,73673));
+
+        //Prints all current customers in the list
+        //  customerDao.showAllCustomers().forEach(System.out::println);
+
+        //Create a new customer with optional values
+        //  customerDao.createCustomer(new Customer("Felix","Jacobsen",23,73673));
+
+
+        //Search for a customer with a specific first name
+        // customerDao.selectWithName("Felix").forEach(System.out::println);
+
+
+        //Order all customers by their age in descending order
+        customerDao.orderByAge().forEach(System.out::println);
     }
 }

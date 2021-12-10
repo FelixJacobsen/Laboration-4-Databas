@@ -9,19 +9,14 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customer_id;
-
-
-
 
     private String first_name;
     private String last_name;
     private int age;
     private int postal_code;
-
 
     public Customer(){
 
