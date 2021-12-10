@@ -4,7 +4,10 @@ package org.example;
 public class App {
     public static void main(String[] args) {
         CustomerDao customerDao = new CustomerDaoImpl();
+        Create10Customers create10Customers = new Create10Customers();
 
+        //Creates 10 customers to use as demo data
+        create10Customers.create10Customers();
 
         //Prints all current customers in the list
         //  customerDao.showAllCustomers().forEach(System.out::println);
