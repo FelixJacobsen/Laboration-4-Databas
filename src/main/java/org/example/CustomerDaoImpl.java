@@ -35,13 +35,29 @@ public class CustomerDaoImpl implements CustomerDao{
         return query.getResultList();
     }
 
+    @Override
     public List<Customer> orderByAge(){
         TypedQuery<Customer>query = em.createQuery("SELECT s FROM Customer s ORDER BY s.age DESC",Customer.class);
         return query.getResultList();
     }
 
+    @Override
+    public List<Customer> findByPostalCode(int postal_code) {
+        TypedQuery<Customer> query = em.createQuery("SELECT c FROM Customer c WHERE c.postal_code = :postal_code",Customer.class);
+        query.setParameter("postal_code",postal_code);
+        return query.getResultList();
+    }
 
 
+    @Override
+    public List<Customer> findBetweenAge(int minAge, int maxAge){
+        TypedQuery<Customer>query = em.createQuery("SELECT s FROM Customer s WHERE s.age BETWEEN :minAge AND :maxAge",Customer.class);
+        query.setParameter("minAge",minAge);
+        query.setParameter("maxAge",maxAge);
+        return query.getResultList();
+    }
+
+A
 
 
 

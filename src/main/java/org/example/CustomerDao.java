@@ -7,6 +7,6 @@ public interface CustomerDao {
     List<Customer> selectWithName(String first_name);
     List<Customer> showAllCustomers();
     List<Customer> orderByAge();
-
-
+    List<Customer> findByPostalCode(int postalCode);
+    List<Customer> findBetweenAge(int minAge, int maxAge);
 }

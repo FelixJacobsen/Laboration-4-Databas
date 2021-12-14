@@ -7,7 +7,7 @@ public class App {
         Create10Customers create10Customers = new Create10Customers();
 
         //Creates 10 customers to use as demo data
-        create10Customers.create10Customers();
+       // create10Customers.create10Customers();
 
         //Prints all current customers in the list
         //  customerDao.showAllCustomers().forEach(System.out::println);
@@ -21,6 +21,12 @@ public class App {
 
 
         //Order all customers by their age in descending order
-        customerDao.orderByAge().forEach(System.out::println);
+       // customerDao.orderByAge().forEach(System.out::println);
+
+        //Find a customer based on their postal code
+        //customerDao.findByPostalCode().forEach(System.out::println);
+
+
+        customerDao.findBetweenAge(20,25).forEach(System.out::println);
     }
 }
